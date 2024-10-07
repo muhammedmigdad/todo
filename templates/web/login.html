@@ -1,0 +1,35 @@
+{% extends 'base/web_base.html' %}
+{% block container %}
+{% load static %}
+
+<section class=" grid grid-cols-1 md:grid-cols-2 h-screen">
+    <div class="col-span-1 hidden md:flex">
+        <img src="{% static 'images/login.png' %}" alt="image" class="w-full">
+    </div>
+    <div class="col-span-1 h-screen flex justify-center items-center">
+        <div class="text-center">
+            <h1 class="text-[32px] font-semibold mb-5">LOGIN NOW</h1>
+            <p class="w-[90%] md:w-[70%] m-auto mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel soluta, quidem reiciendis necessitatibus unde culpa?</p>
+            <form action="" id="login-form" method="post" class="w-[90%] md:w-[70%] m-auto">
+                {% csrf_token %}   
+                <div class="flex items-center justify-between border border-gray-300 mb-4 rounded-2xl">
+                    <input 
+                        type="text" 
+                        name="username" 
+                        id="username" 
+                        placeholder="Enter Your username" 
+                        class="flex-grow w-full px-4 py-3 rounded-2xl outline-none"
+                    >
+                    <span id="username-feedback" class="mx-2 text-2xl flex items-center space-x-5 ">
+                    </span>
+                </div>
+                
+                <input type="password" name="password" placeholder="Enter Your Password" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">
+                <button type="submit" class="fadeOutLeftBig py-3 px-5 bg-red-500 text-white text-[14px] font-semibold rounded-xl">LOGIN</button>
+            </form>
+            <p class="text-[14px] mt-5">Don't have an Account? <a href="{% url 'web:register' %}" class="text-[14px] text-red-500">Sign Up</a></p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

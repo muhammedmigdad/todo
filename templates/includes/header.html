@@ -1,0 +1,9 @@
+{% load static %}
+
+<header class="bg-[#edbb8d] flex justify-between items-center ">
+    <h1 class="text-center items-center text-[40px] font-[600] px-3  text-[#7e7c7c]">TO DO</h1>
+    <h1 class=" text-center items-center text-[50px] font-[600] text-[#7e7c7c] ">TO DO <span class=" text-[#f3ddc9]">LIST</span></h1>
+    <a href="{% url 'web:logout' %}">
+    <img class="w-[70px] bg-[#edbb8d]" src="{% static 'images/logout1.webp' %}" alt="logout">
+    </a>
+</header>
